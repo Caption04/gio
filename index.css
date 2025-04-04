@@ -1,0 +1,294 @@
+/* This is the index stylesheet by @GX2 */
+
+/* 
+===================
+Fonts
+===================
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* 
+===================
+Global Variables
+===================
+*/
+
+:root {
+/* 
+===================
+Color Pallette 
+===================
+*/
+
+/* Primary Color */
+--clr-primary: #ffe500;
+/* Secondary Color */
+--clr-secondary: #0056a0;
+/* Brand-gradient */
+--gradient-var1: linear-gradient(180deg, #FFFFFF, #DADADA);
+--gradient-var2: linear-gradient(180deg, #FFFFFF, #E0E0E0);
+--gradient-var3: radial-gradient(circle, rgba(220,220,220,1) 25%, rgba(243,243,243,1) 75%);
+--gradient-var4: linear-gradient(180deg, #E8E8E8, #FFFFFF);
+--gradient-var5: linear-gradient(180deg, #FFFFFF, #A7A7A7);
+/* Black Color shades*/
+--clr-black: #2E2F36;
+--shade1: #F0F0F0;
+--shade2: #E8E8E8;
+--shade3: #F8F8F8;
+/*Fonts */
+--ff-primary: "Montserrat", sans-serif;
+--ff-secondary: "Lora", sans-serif;
+/* font size */
+font-size: 16px;
+/* Global Transition */
+--transition: all 0.3s ease;
+}
+
+/* 
+===================
+Basic Reset
+===================
+*/
+*, ::after, ::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+
+/* 
+============================
+GLOBAL STYLES
+============================
+ */
+
+.hero{
+    height: 100vh;
+    max-height: 830px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url("hero.png") no-repeat center / cover;
+    z-index: -1;
+    transform: scale(1.2);
+    transition: transform 3s ease-in-out;
+}
+
+.hero.scale::before{
+    transform: scale(1);
+}
+
+.header{
+    width: 100%;
+    display: flex;
+    padding: 1em 2em;
+    align-items: center;
+    height: 15vh;
+    max-height: 100px;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: all 4s ease-in-out;
+}
+
+.header-animate{
+    opacity: 1 !important;
+    transform: translateY(0);
+}
+
+.logo{
+    font-family: var(--ff-primary);
+    font-weight: 400;
+    font-size: clamp(28px, 2.5vw, 2.5vw);
+    color: white;
+    margin-right: auto;
+}
+
+
+
+ul{
+    list-style-type: none;
+    display: flex;
+    gap: 2.5em;
+}
+
+ul li a{
+    color: white;
+    font-family: var(--ff-primary);
+    font-weight: 400;
+    font-size: 1.2vw;
+    text-decoration: none;
+}
+
+.row{
+    display: flex;
+    flex-grow: 1;
+    height: 85vh;
+    max-height: 730px;
+    width: 100%;
+}
+
+/* Column 1 edits */
+.hero-col-1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-grow: 1;
+    width: 50%;
+    padding: 1em 2em;
+}
+
+.text1{
+    font-family: var(--ff-primary);
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 9px 4px 10px black;
+    margin-bottom: 1em;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 3s ease-in-out;
+}
+
+.text1-visible{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.para-text-1{
+    font-family: var(--ff-secondary);
+    font-size: 12px;
+    font-weight: 200;
+    color: white;
+    margin-bottom: 1em;
+    width: 400px;
+    text-align: justify;
+    line-height: 170%;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: all 3s ease-in-out;
+}
+
+.para-text-1-visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.read-more{
+    background: none;
+    border-style: none;
+    cursor: pointer;
+    color: white;
+    font-family: var(--ff-secondary);
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    opacity: 0;
+    transform: translateY(200%);
+    transition: all 3s ease-in-out;
+}
+
+.read-more-visible{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Column 2 edits */
+.hero-col-2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3em 7em;
+}
+
+h1{
+    color: black;
+    font-family: var(--ff-primary);
+    font-size: 7vw;
+    font-weight: 300;
+    text-align: left;
+    opacity: 0;
+    transform: translateX(50%);
+    transition: all 3s ease-in-out;
+}
+
+.h1-motion{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sub{
+    color: white;
+    font-family: var(--ff-primary);
+    font-size: 1.35vw;
+    font-weight: 300;
+    padding-left: 0.7em;
+    white-space: nowrap;
+    margin-bottom: 2em;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 3s ease-in-out;
+}
+
+.sub-visible{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hero-btn{
+    display: flex;
+    align-items: center;
+    font-family: var(--ff-primary);
+    font-size: 14px;
+    font-weight: 300;
+    background-color: black;
+    border-style: none;
+    color: white;
+    padding: 0.75em 1.5em;
+    gap: 0.5em;
+    border-radius: 10px;
+    margin-left: 0.7em;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 3s ease-in-out;
+}
+
+.hero-btn-visible{
+    opacity: 1;
+}
+
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    z-index: 100;
+    color: white;
+    font-family: var(--ff-primary);
+    font-size: 100px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+    transition: all 1.5s ease-in-out;
+}
+
+.overlay-shrink{
+    height: 0%;
+    font-size: 0;
+
+}
